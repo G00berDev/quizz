@@ -202,6 +202,12 @@ setCurrentQuestionIndex((prev) => prev + 1);
 return (
 <div className="container">
 <h1 className="quiz-title">Dark Souls Quiz</h1>
+<div className="bonfire">
+    <div className="flame"></div>
+    <div className="flame"></div>
+    <div className="flame"></div>
+    <div className="logs"></div>
+</div>
 {currentQuestionIndex < questions.length ? (
 <>
     <div className="question-card">
