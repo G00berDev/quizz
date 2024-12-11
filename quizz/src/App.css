@@ -1,40 +1,133 @@
+@font-face {
+  font-family: 'DarkSoul';
+  src: url('./fonts/OptimusPrinceps.ttf') format('truetype'); /* Adjust path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* App Container */
 .container {
-  font-family: Arial, sans-serif;
+  font-family: 'DarkSoul', serif;
   text-align: center;
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  width: 70vw; /* 70% of the viewport width */
+  height: 70vh; /* Full height */
+  margin: 0 auto; /* Center horizontally */
+  background-color: #1a1a1a; /* Dark, ominous background */
+  color: #d1b979; /* Warm, muted gold reminiscent of the bonfire flame */
+  box-shadow: 0 0 20px 5px rgba(255, 153, 51, 0.2); /* Subtle fiery glow */
+  border: 1px solid #3b3b3b; /* Rugged border */
+  display: flex; /* Flexbox for centering */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Question Card */
 .question-card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  font-family: 'DarkSoul', serif;
+  border: 1px solid #4a3f34; /* Aged, weathered stone color */
+  padding: 30px; /* Increased padding for larger area */
+  border-radius: 12px; /* Softer edges, but not modern */
+  background-color: #2a2620; /* Dark stone-like background */
   margin-bottom: 20px;
+  color: #d1b979; /* Text in bonfire gold */
+  box-shadow: 0 0 15px rgba(255, 153, 51, 0.2); /* Fiery shadow effect */
 }
 
 /* Buttons */
 .button {
-  padding: 10px 20px;
+  font-family: 'DarkSoul', serif;
+  padding: 12px 24px;
   margin: 10px;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid #3b3b3b;
+  border-radius: 8px;
   cursor: pointer;
-  color: white;
+  color: #d1b979; /* Text color similar to gold */
+  font-weight: bold;
+  background: linear-gradient(45deg, #4a3f34, #2a2620);
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.2); /* Faint fiery glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button.primary {
-  background-color: #4caf50;
+  background-color: #a52a2a; /* Deep ember red */
+  border: 1px solid #803a1b; /* Burnt red accents */
 }
 
 .button.secondary {
-  background-color: #f44336;
+  background-color: #333; /* Dark ash gray */
+  border: 1px solid #4a4a4a;
 }
 
 .button:disabled {
-  background-color: #ccc;
+  background-color: #555; /* Ash gray */
   cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button:hover {
+  transform: scale(1.1); /* Slight grow effect */
+  box-shadow: 0 0 20px rgba(255, 153, 51, 0.5); /* Intense fiery glow */
+}
+
+/* Bonfire Element */
+.bonfire {
+  width: 100px;
+  height: 150px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.bonfire .flame {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 153, 51, 1) 0%, rgba(255, 69, 0, 0.8) 60%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.bonfire .flame:nth-child(1) {
+  left: 25px;
+  animation-delay: 0.1s;
+}
+
+.bonfire .flame:nth-child(2) {
+  left: 15px;
+  animation-delay: 0.3s;
+}
+
+.bonfire .flame:nth-child(3) {
+  left: 35px;
+  animation-delay: 0.5s;
+}
+
+.bonfire .logs {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 20px;
+  background-color: #4a3f34; /* Wood color */
+  border-radius: 4px;
+}
+
+@keyframes flicker {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2) translateY(-10px);
+    opacity: 1;
+  }
+}
+
+.quiz-title {
+  font-family: 'DarkSoul', serif;
+  font-size: 2.5rem;
+  color: #d1b979; /* Bonfire gold color */
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 153, 51, 0.5); /* Fiery glow effect */
 }

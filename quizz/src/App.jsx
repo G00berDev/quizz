@@ -201,6 +201,7 @@ setCurrentQuestionIndex((prev) => prev + 1);
 
 return (
 <div className="container">
+<h1 className="quiz-title">Dark Souls Quiz</h1>
 {currentQuestionIndex < questions.length ? (
 <>
     <div className="question-card">
